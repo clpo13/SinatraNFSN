@@ -1,10 +1,10 @@
 # SinatraNFSN
 
-Example [Sinatra](http://www.sinatrarb.com) app for NearlyFreeSpeech.net (NFSN) using the Thin webserver.
+Example [Sinatra](http://www.sinatrarb.com) app for [NearlyFreeSpeech.net](https://www.nearlyfreespeech.net) (NFSN) using the Thin webserver.
 
 ## Installing
 
-Create a site at NFSN of the type Apache 2.4 Generic. SSH into the site and execute the following commands:
+Create a site at NFSN of the type Apache 2.4 Generic. Enable SSH access if it's not already activated, and SSH into the site to execute the following commands:
 
 ```bash
 cd /home/protected/
@@ -32,7 +32,7 @@ That's it! The daemon will start automatically after it's created. If there are 
 
 ## Troubleshooting
 
-Check the file `/home/logs/daemon_sinatra.log` for error messages. Most importantly, make sure the daemon is running as "me" *not* "web". Otherwise, Ruby will fail to find the right gems and give an error on starting the server.
+Check the file `/home/logs/daemon_sinatra.log` for log and error messages. Most importantly, make sure the daemon is running as "me" *not* "web". Otherwise, Ruby will fail to find the right gems and give an error on starting the server. Also check that the proxy port is the same as what Sinatra/Thin is listening on.
 
 ## License
 
