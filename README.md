@@ -10,7 +10,6 @@ Create a site at NFSN of the type Apache 2.4 Generic. Enable SSH access if it's 
 cd /home/protected/
 git clone --depth=1 https://github.com/clpo13/SinatraNFSN.git
 cd SinatraNFSN
-chmod a+x run.sh
 bundle install --path ~/.gem
 ```
 
@@ -28,13 +27,13 @@ Add a proxy with the default settings:
 - Document Root: `/`
 - Target Port: `8080`
 
-That's it! The daemon will start automatically after it's created. If there are no problems, you should see the words "Hello, world!" at the site's web address.
+That's it! The daemon will start automatically after it's created. If there are no problems, you should see the words "Hello, world! This is Sinatra x.y.z." at the site's web address.
 
 ## Troubleshooting
 
 Check the file `/home/logs/daemon_sinatra.log` for log and error messages. Most importantly, make sure the daemon is running as "me" *not* "web". Otherwise, Ruby will fail to find the right gems and give an error on starting the server. Also check that the proxy port is the same as what Sinatra/Thin is listening on.
 
-The app might break on NFSN realm updates. If you're getting errors about an incorrect bundler version, try deleting Gemfile.lock and running `bundle install --path ~/.gem` again.
+The app might break on NFSN realm updates. If you're getting errors about an incorrect bundler version, even when running `bundle update --bundler`, try deleting Gemfile.lock and running `bundle install --path ~/.gem` again.
 
 ## License
 
