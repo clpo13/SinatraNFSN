@@ -1,6 +1,7 @@
 require 'sinatra'
 
 get '/' do
-  'Hello, world!'
+  ver = Sinatra::VERSION
+  "Hello, world! This is Sinatra #{ver}."
 end
 
